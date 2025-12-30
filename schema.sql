@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS tasks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  description TEXT,
+  ai_summary TEXT,
+  status TEXT NOT NULL DEFAULT 'pending',
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,55 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "api",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-12-30",
+	"compatibility_flags": [
+		"global_fetch_strictly_public"
+	],
+	"observability": {
+		"enabled": true
+	},
+	"d1_databases": [
+		{
+			"binding": "task_db",
+			"database_name": "task_db",
+			"database_id": "76a75291-5da9-4556-aee8-9091d208eb0a",
+			"remote": true
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "USER_PREFS",
+			"id": "b4f99971c7434d23a89433ec36ae6829",
+			"remote": true
+		}
+	],
+	"ai": {"binding":"AI"}
+	/**
+	 * Smart Placement
+	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+	 */
+	// "placement": {  "mode": "smart" }
+	/**
+	 * Bindings
+	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
+	 * databases, object storage, AI inference, real-time communication and more.
+	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	 */
+	/**
+	 * Environment Variables
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+	 * Note: Use secrets to store sensitive data.
+	 * https://developers.cloudflare.com/workers/configuration/secrets/
+	 */
+	// "vars": {  "MY_VARIABLE": "production_value" }
+	/**
+	 * Service Bindings (communicate between multiple Workers)
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
+	 */
+	// "services": [  {   "binding": "MY_SERVICE",   "service": "my-service"  } ]
+}

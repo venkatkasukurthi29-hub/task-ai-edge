@@ -1,0 +1,24 @@
+{
+  "name": "task-ai-edge",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-12-28",
+
+  "d1_databases": [
+    {
+      "binding": "task_db",
+      "database_name": "task-db",
+      "database_id": "76cda895-194e-4b1e-b22a-2494fb0e2da2"
+    }
+  ],
+
+  "kv_namespaces": [
+    {
+      "binding": "USER_CONFIG",
+      "id": "bfa0299b83704a099e9c6065a1f8dbe9"
+    }
+  ],
+
+  "ai": {
+    "binding": "AI"
+  }
+}
