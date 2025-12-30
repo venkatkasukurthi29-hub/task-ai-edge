@@ -58,7 +58,7 @@ Note: Restart npm run dev after changing .env
 
 - POST /api/tasks (JSON body: title, description)
 
-- PATCH /api/tasks/:id (JSON body: status=open|done)
+- PUT /api/tasks/:id (JSON body: status=open|done)
 
 - DELETE /api/tasks/:id
 
