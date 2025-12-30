@@ -23,12 +23,14 @@ A minimal full-stack Tasks app:
 ### Terminal A — API
 API runs at: http://127.0.0.1:8787
 
+
 ```bash
 cd api
 npx wrangler dev
+```
 
 
-###Terminal B — Web
+### Terminal B — Web
 
 Web runs at: http://localhost:5173
 
@@ -36,30 +38,31 @@ Web runs at: http://localhost:5173
 cd web
 npm install
 npm run dev
+```
 
-###Environment
+### Environment
 
 Web reads API base from web/.env:
 
 ```env
 VITE_API_BASE=http://127.0.0.1:8787
-
+```
 
 Note: Restart npm run dev after changing .env
 
-###API Endpoints
+### API Endpoints
 
-GET /api/health
+- GET /api/health
 
-GET /api/tasks
+- GET /api/tasks
 
-POST /api/tasks (JSON body: title, description)
+- POST /api/tasks (JSON body: title, description)
 
-PATCH /api/tasks/:id (JSON body: status=open|done)
+- PATCH /api/tasks/:id (JSON body: status=open|done)
 
-DELETE /api/tasks/:id
+- DELETE /api/tasks/:id
 
-###Database (D1)
+### Database (D1)
 
 Schema is managed via migrations in api/migrations/.
 
@@ -68,12 +71,12 @@ Apply migrations to remote D1:
 ```bash
 cd api
 npx wrangler d1 migrations apply task_db --remote
+```
 
+## Notes
 
-##Notes
+- D1 binding: task_db
 
-D1 binding: task_db
+- KV binding: USER_PREFS
 
-KV binding: USER_PREFS
-
-AI binding: AI (reserved for later features)
+- AI binding: AI (reserved for later features)
